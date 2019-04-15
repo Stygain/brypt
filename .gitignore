@@ -8,19 +8,20 @@
 *.pipe
 *.node
 .jshintrc
-device
-test/
-Brypt Server/vendor/*/
-dist/electron/*
-dist/web/*
-build/*
-bin/
-!build/icons
 package-lock.json
-node_modules/
 npm-debug.log
 npm-debug.log.*
 thumbs.db
-!.gitkeep
 fontawesome.all.min.css
+device
+Brypt Server/test/
+Brypt Server/vendor/*/
+Brypt Server/bin/
+Brypt Desktop/dist/electron/*
+Brypt Desktop/dist/web/*
+Brypt Desktop/build/*
+Brypt Desktop/bin/
+Brypt Desktop/node_modules/
 webfonts
+!.gitkeep
+!build/icons
