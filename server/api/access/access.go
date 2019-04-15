@@ -1,7 +1,0 @@
-
-
-// register
-
-// login
-
-// link device
