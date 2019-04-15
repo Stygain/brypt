@@ -1,0 +1,34 @@
+{
+    "Server": {
+        "Domain": "localhost",
+        "AccessDomain": "access.localhost:3006",
+        "BridgeDomain": "bridge.localhost:3006",
+        "DashboardDomain": "dashboard.localhost:3006",
+        "HTTPPort": 3005,
+        "HTTPSPort": 3006
+    },
+    "Session": {
+        "Options": {
+            "Path": "/",
+            "Domain": "",
+            "MaxAge": 28800,
+            "Secure": false,
+            "UseHTTPS": true,
+            "HTTPSOnly": true
+        }
+    },
+    "Template": {
+        "Root": "main",
+        "Children": [
+            "partial/menu",
+            "partial/footer"
+        ]
+    },
+    "View": {
+        "BaseURI": "/",
+        "Extension": "",
+        "Folder": "assets/templates",
+        "Name": "",
+        "Caching": true
+    }
+}
