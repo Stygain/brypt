@@ -9,9 +9,8 @@
 *.node
 .jshintrc
 device
-/bin
-/test
-/vendor/*/
+test/
+vendor/*/
 dist/electron/*
 dist/web/*
 build/*
