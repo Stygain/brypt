@@ -10,7 +10,7 @@
 .jshintrc
 device
 test/
-vendor/*/
+Brypt Server/vendor/*/
 dist/electron/*
 dist/web/*
 build/*
