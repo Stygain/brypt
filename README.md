@@ -6,12 +6,11 @@ Brypt-Server: https://github.com/Stygain/brypt-server
 
 # **Team 76 (Brypt) Setup Guide**
 
+PDF version available in the Documents/Setup Guide folder.
 
 # Part One: Desktop Application
 
 **Pick one of the following two testing methods:**
-
-
 
 * Brypt Ubuntu Virtual Machine (Recommended)
     + Difficulty: **Easy**
@@ -73,7 +72,7 @@ Brypt-Server: https://github.com/Stygain/brypt-server
             git clone https://github.com/zeromq/cppzmq.git
             sudo cp cppzmq/zmq.hpp /usr/local/include/
             ```
-        - OpenSSL 1.1.0fg
+        - OpenSSL 1.1.0g
             1. Note: Electron and Node.js use competing branches of OpenSSL; a static library must be installed onto your system. 
                 * [https://wiki.openssl.org/index.php/Compilation_and_Installation](https://wiki.openssl.org/index.php/Compilation_and_Installation#OS_X)
             ```bash 
@@ -294,28 +293,28 @@ Brypt-Server: https://github.com/Stygain/brypt-server
 
 1. Starting up Brypt Desktop
 
-![alt_text](Documents/images/Untitled-document0.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/electron-setup.png "image_tooltip")
 
 
 2. Logging in to the Brypt Application
 
-![alt_text](Documents/images/Untitled-document1.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/login-form.png "image_tooltip")
 
-![alt_text](Documents/images/Untitled-document2.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/login-success.png "image_tooltip")
 
 
 3. Finding the Brypt Network
 
-![alt_text](Documents/images/Untitled-document3.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/network-found.png "image_tooltip")
 
 
 4. Initial Brypt Dashboard with one root coordinator and one leaf node
 
-![alt_text](Documents/images/Untitled-document4.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/initial-dashboard.png "image_tooltip")
 
 
 5. Brypt Dashboard and readings collected after 15 minutes of running
 
-![alt_text](Documents/images/Untitled-document5.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/15-minute-dashboard.png "image_tooltip")
 
-![alt_text](Documents/images/Untitled-document6.png "image_tooltip")
+![alt_text](https://raw.githubusercontent.com/Stygain/brypt/master/Documents/Setup%20Guide/images/15-minute-readings.png "image_tooltip")
