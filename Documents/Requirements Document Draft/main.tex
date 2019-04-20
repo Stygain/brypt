@@ -21,12 +21,14 @@
 
 \usepackage[parfill]{parskip}
 \usepackage[utf8x]{inputenc}
+\usepackage{afterpage}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[final]{pdfpages}
 \usepackage{listings}
+\usepackage{longtable}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage[a4paper,top=0.75in,bottom=0.75in,left=0.75in,right=0.75in,marginparwidth=1.75cm]{geometry}
 
@@ -100,7 +102,7 @@
 %\HRule \\[0.8cm]
 \textbf{\large Abstract} \\
 \HRule \\[0.4cm]
-The goal of this project will be to implement a secured, decentralized meshnet with low minimum resource requirements to enable the connection of a wide variety of low-end devices which lack a general purpose operating system. Our objective will be to investigate the amount of security offered and resources required by various cryptosystems in order to provide organizations interested in securing their low-end device networks with a quantified estimate of the costs and benefits. In addition, we hope to accomplish graceful degradation on our network, meaning that the elimination or temporary unavailability of a given node will have minimal negative impact on the inter-connectivity of other nodes. This will encourage the securing of many resource limited devices which play a critical role in meeting a wide variety of human needs.
+The goal of this project will be to implement a secured, federated Internet of Things (IoT) network with low minimum resource requirements to enable the connection of a wide variety of low-end devices which lack a general purpose operating system. Our objective will be to investigate the amount of security offered and resources required by various cryptosystems in order to provide organizations interested in securing their low-end device networks with a quantified estimate of the costs and benefits. In addition, we hope to accomplish graceful degradation on our network, meaning that the elimination or temporary unavailability of a given node will have minimal negative impact on the inter-connectivity of other nodes. This will encourage the securing of many resource limited devices which play a critical role in meeting a wide variety of human needs.
 \\[0.4cm]
 \HRule \\[1.5cm]
 \end{minipage}
@@ -110,7 +112,7 @@ The goal of this project will be to implement a secured, decentralized meshnet w
                 %DATE SECTION
                 %-----------------    -----------------------------------------------------------------------
 
-{\large October 30, 2018}\\[3cm] % Date, change the \today to a set date if you want to be precise
+{\large April 19, 2019}\\[3cm] % Date, change the \today to a set date if you want to be precise
 
 %----------------------------------------------------------------------------------------
 %LOGO SECTION
@@ -128,29 +130,38 @@ The goal of this project will be to implement a secured, decentralized meshnet w
 \newpage
 
 \section{Revisions}
+
+
 \begin{center}
-    \begin{tabular}{|c|p{5cm}|p{5cm}|}
+    \begin{longtable}{|c|p{7cm}|p{6cm}|}
         \hline
         \textbf{Section Number} & \textbf{Original} & \textbf{New}  \\ \hline
         Whole Document & The terms "ad-hoc" and "mesh network" & Changed to the more accurate terms "polymorphic" and "federated network" \\ \hline
+        4.1 & Did not exist in original document. & Added bulleted requirements for quick reference. \\ \hline
         4.6 & subsubsections that describe the supported technologies & Removed the subsubsections due to being too specific for requirements \\ \hline
         4.6 & Bluetooth requirements & Removed Bluetooth requirements due to our decision to lower its priority \\ \hline
-        6 & Did not exist in original requirements & Added Future Developments Section \\ \hline
-        5.4 & The usability of the web application will be evaluated by a select group of beta testers outside of the development team. With minimal to no assistance from the team, beta testers should be able to figure out how to create an account, log in, check the status of the network, and find where to add a new node to the network. A minimum of two of the beta testers should be non-Computer Science majors. Any functionality issues reported during testing must be resolved if deemed necessary by either the development team or the client. & Moved to Future Developments \\ \hline
+        4.7 & Named "System Security" & Renamed "Research Eligible Cryptosystem Requirements" and modularized the requirements such that the research phases were part of the research instead being of within the scope of the code-freeze.\\
+        \hline
+        5.4 & The usability of the web application will be evaluated by a select group of beta testers outside of the development team. With minimal to no assistance from the team, beta testers should be able to figure out how to create an account, log in, check the status of the network, and find where to add a new node to the network. A minimum of two of the beta testers should be non-Computer Science majors. Any functionality issues reported during testing must be resolved if deemed necessary by either the development team or the client. & Removed. \\ \hline
         5.3 & Performance requirements listed tests which would be used to evaluate the cost of a cryptosystem on an entire network instead of individual devices & Rewrote the performance requirements for testing the cryptographic primitives and hash functions to reflect changes made to the structure of our tests. Tests were only able to be run on individual devices. \\
         \hline
-    \end{tabular}
+        5.6& As a base level verification that our protocols are working, we'll simply ensure that a node given normal conditions is capable of initiating the key exchange phase with the server, authenticating itself during that exchange, and finally sending and receiving encrypted messages before ensuring that the decryption process produces the original encrypted messages.\newline As a more advanced verification, our group will perform various holistic verifications of system security against different active attacks, such as partial DoS, MitM attempts, and attempts to clone a node. & [Section Rewritten. See \ref{SysSec}]\\
+        \hline
+        7 & Old Ghant Chart referenced Web Application and showed work starting in September. & Updated to more closely resemble actual timeline. \\ \hline
+    \end{longtable}
 \end{center}
+
+\newpage
 
 \section{Introduction}
 
 \subsection{System purpose}
-As it stands, a wide variety of mission critical tasks for many utility grids (water, power, etc.) are accomplished by low power embedded devices. The mass quantity of devices required to fulfill the operational needs of these networks has created a systemic problem of sacrificing security to reduce the cost of power. The purpose of our system, Brypt, will aim to provide a solution for architects of these networks to have the best of both worlds. In minimizing the cost of power while maximizing the security of polymorphic, federated networks will demonstrate numerous benefits.
+As it stands, a wide variety of mission critical tasks for many utility grids (water, power, etc.) are accomplished by low power embedded devices. By in large information security appears to be an afterthought in many internet connected devices thus creating significant opportunities for malicious persons to compromise these systems. Given that interconnected devices have become ubiquitous with modern life, the effects of a compromised system can be far reaching. The outcomes can range from the invasion of industrial security to the loss of life. Our project takes a look at the state of Internet of Things (IoT) security as we implement our own network. To solve these issues we will implement a federated infrastructure of which we will use to study the trade-offs of security and power consumption. Our project, Brypt, aims to provide a solution for architects of these networks to have the best of both worlds. In minimizing the cost of power while maximizing the security of IoT networks will demonstrate numerous benefits.
 
-In addition to offering an implementation of what our investigations suggest to be an excellent general purpose federated cryptosystem, we will generate useful data about the costs of resource asymmetric cryptosystems that can be applied to the design of more special purpose meshnets by organizations looking to secure their particular resource distribution optimally. These findings will be published in a final report alongside the implemented network to help in the potential design of such projects.
+In addition to offering an implementation of what our investigations suggest to be an excellent general purpose Internet of Things cryptosystem, we will generate useful data about the costs of resource asymmetric cryptosystems that can be applied to the design of more special purpose IoT networks by organizations looking to secure their particular resource distribution optimally. These findings will be published in a final report alongside the implemented network to help in the potential design of such future projects.
 
 \subsection{System scope}
-The ultimate goal of this project will be produce the implementation and verification of the secure networking paradigm succinctly named Brypt. Brypt combines the main cornerstones of the software: bridging and encrypting. The implementation will provide a central server, binaries for node endpoints, and a security protocol working on top of the session layer. In completing the work on this project our team aims to provide a novel solution to security in interconnected networks of embedded and general purpose devices. Some of the benefits Brypt will provide include the increased viability of secure cryptographic primitives in power constrained environments across a number of different communication technologies. 
+The ultimate goal of this project will be to produce the implementation and verification of the secure networking paradigm succinctly named Brypt. Brypt combines the main cornerstones of the software, bridging and encrypting. The implementation will provide a central server, binaries for node endpoints, and a security protocol working on top of the application layer. In completing the work on this project our team aims to provide a novel solution to security in interconnected networks of embedded and general purpose devices. Some of the benefits Brypt will provide include the increased viability of secure cryptographic primitives in resource constrained environments across several of different communication technologies.
 
 \subsection{System overview}
 \subsubsection{System context}
@@ -169,14 +180,14 @@ There is a single user class within our system; this permissions class will act 
     \item Node: An endpoint in the network.
 \end{itemize}
 
-\section{References}
+%\section{References}
 
-\begingroup
-\renewcommand{\section}[2]{}%
+%\begingroup
+%\renewcommand{\section}[2]{}%
 %\renewcommand{\chapter}[2]{}% for other classes
-\bibliographystyle{ieeetr}
-\bibliography{citations}
-\endgroup
+%\bibliographystyle{ieeetr}
+%\bibliography{citations}
+%\endgroup
 
 \section{Specific Requirements}
 
@@ -189,7 +200,7 @@ There is a single user class within our system; this permissions class will act 
     \item A node network operating over at least one communication technology (e.g. WiFi, LoRa, BLE).
     \item A network has one root coordinator that manages connections with its peers.
     \item The network can respond to node information and sensor query requests. The responses will be made up of real and arbitrary values. 
-    \item The network nodes have end-to-end encryption/decryption from themselves to the client.
+    \item The network nodes have end-to-end encryption/decryption from themselves to the client facilitated by the codebase developed. (Need cryptoprimitive library and memory available, but don't need to have a specific phase up and running)
     \item A user interface supported by a minimum of one operating system.
     \item The user interface can query the central server to get network data in order to authenticate the user, find the network, and get basic registered node information.
     \item The user interface can connect to the root coordinator.
@@ -219,8 +230,9 @@ Each networked device will be in a connected or disconnected state in terms of t
 
 This network will consist of devices using multiple communication types. Devices will be networked in a federated topology that may be designated by the user with the possibility of self-configuration addable at later date. Clusters should be capable of communicating over, at a minimum, WiFi. Each cluster will be connected with other clusters through network coordinators to provide inter-communication. Examples of communication types are LoRa, WiFi (802.11), and BLE. The client will have higher computational resources than many of the networked-devices. Networked devices will have varying computational resources as would be implemented in the real world. 
 
-\subsection{System Security} % Sean
+\subsection{Research Eligible Cryptosystem Requirements} % Sean
 
+While the deliverable will simply be the network codebase itself, capable of facilitating a wide variety of possible cryptosystems, overarching requirements for cryptosystems we'd like to investigate during our post-code-freeze research are outlined below.
 %\textbf{Key exchange}
 %    A new node must be able to authenticate a member of the network given some server fingerprint (could be public RSA key, BLAKE pre-image challenge for server, etc.) It must then be able to derive symmetric keys to be used for bootstrapping future symmetric-key authentication and/or privacy.
     
@@ -242,7 +254,7 @@ System should be able to use a single (possibly unique) fingerprint for each nod
 %System will sanitize input on the server side to avoid any database tampering; whether it come from a client, or a malicious interceptor of a query. \\
 
 Rogue Node Attacks:\\
-Cryptosystem must resist imitation of legitimate nodes by avoiding reuse of keystreams (i.e. any key, nonce pair in an AES-CTR encryption must be used only once). \\
+Cryptosystem must resist imitation of legitimate nodes by avoiding reuse of keystreams (i.e. any key, nonce pair in an AES-CTR encryption must be used only once). System will not compromise privacy to Rogue Nodes under any circumstance, and given a DoS-oriented Rogue Node, will provide administrator alert mechanism for nodes not reporting as expected to client.\\
     
 \subsection{Information Management} % Terri
 
@@ -316,10 +328,13 @@ Each device will be tested by authenticating, connecting, operating on the netwo
 %We will test our network under variable weather conditions (as they present themselves), and compare it to control data, which will be gathered in as bare of a space as possible.
 
 \subsection{System Security} % Sean
+\label{SysSec}
 %Re-write
-As a base level verification that our protocols are working, we'll simply ensure that a node given normal conditions is capable of initiating the key exchange phase with the server, authenticating itself during that exchange, and finally sending and receiving encrypted messages before ensuring that the decryption process produces the original encrypted messages.
+% As a base level verification that our protocols are working, we'll simply ensure that a node given normal conditions is capable of initiating the key exchange phase with the server, authenticating itself during that exchange, and finally sending and receiving encrypted messages before ensuring that the decryption process produces the original encrypted messages.
 
-As a more advanced verification, our group will perform various holistic verifications of system security against different active attacks, such as partial DoS, MitM attempts, and attempts to clone a node.
+% As a more advanced verification, our group will perform various holistic verifications of system security against different active attacks, such as partial DoS, MitM attempts, and attempts to clone a node.
+
+The verification that the network has what's needed to provide a platform for our security research will be very simple. One only need verify that the messaging system is capable of storing ~1-2KB of cryptographic information (keys, key-components, nonces, etc.) on each of our low-end devices, logical control over which coordinators the feathers are using, client-side software capable of storing the same information, and a server which performs user-authentication. As a matter of good data-stewardship, the server will employ the bcrypt password hasing function to all user passwords, so as to protect them in the case of a server breach.
 
 \subsection{Information Management} % Terri
 
@@ -329,8 +344,6 @@ The database(s) will be tested to ensure that information is correctly stored an
 \subsection{Policies and Regulations}
 
 Each node will only be able to communicate on frequencies that are unregulated, as defined by their hardware. We will also test the reception capabilities of the nodes to ensure that there is no interference from outside sources, and that within their natural limits they are able to send and receive to other nodes on the network.
-
-\section{Future Developments}
 
 %%% Gantt Chart %%%
 \section{Project Timeline}
@@ -356,9 +369,9 @@ Each node will only be able to communicate on frequencies that are unregulated, 
     group height=.3,
     group peaks height=.2,
     bar incomplete/.append style={fill=colorthree}
-   ]{2018-09}{2019-5}
+   ]{2018-11}{2019-5}
    \gantttitlecalendar{year}\\
-   \gantttitlelist{9,10,11,12,1,2,3,4,5}{1} \\
+   \gantttitlelist{11,12,1,2,3,4,5}{1} \\
    %\ganttbar[
 %    progress=100,
  %   bar progress label font=\small\color{colorone},
@@ -369,27 +382,30 @@ Each node will only be able to communicate on frequencies that are unregulated, 
 \ganttset{progress label text={}, link/.style={black, -to}}
 
 % Objective 1
-\ganttgroup{Server API}{2018-10}{2018-11} \\
+\ganttgroup{Server API}{2018-11}{2019-1} \\
 % Task A - Start of Jan to end of Jan (1 month)
-\ganttbar[progress=50, name=T1A]{Develop Server API}{2018-10}{2018-11} \\
+\ganttbar[progress=100, name=T1A]{Develop Server API}{2018-11}{2019-1} \\
 % Task B - Start of Feb to end of Apr (3 months)
 % \ganttlinkedbar[progress=0]{Task B}{2019-02}{2019-04} \\
 % Task C
 % \ganttlinkedbar[progress=0]{Task C}{2019-05}{2019-06} \\
 
 % Objective 2
-\ganttgroup{Web Application UI}{2018-11}{2018-12} \\
+\ganttgroup{Website}{2018-11}{2019-1} \\
 % Task A
-\ganttbar[progress=15, name=T2A]{Develop UI and integrate into server}{2018-11}{2018-12} \\
-\ganttbar[progress=0, name=T2A]{Test UI Usability}{2018-12}{2018-12} \\
+\ganttbar[progress=100, name=T2A]{Develop website and integrate into server}{2018-11}{2019-1} \\
 % Task B
 % \ganttlinkedbar[progress=0]{Task B}{2019-04}{2019-06} \\
 
-\ganttgroup{Node Networking}{2019-01}{2019-02} \\
-  \ganttbar[progress=0]{Develop application to run on nodes}{2019-01}{2019-02} \\
+\ganttgroup{Node Networking}{2019-01}{2019-04} \\
+  \ganttbar[progress=90]{Develop application to run on nodes}{2019-01}{2019-04} \\
+  
+\ganttgroup{Desktop Application}{2019-02}{2019-05} \\
+  \ganttbar[progress=90]{Develop Electron application}{2019-02}{2019-04} \\
+  \ganttbar[progress=0, name=T2A]{Test UI Usability}{2019-5}{2019-5} \\
 
 \ganttgroup{Security Protocol}{2019-02}{2019-05} \\
-  \ganttbar[progress=0]{Integrate protocol into network communication}{2019-02}{2019-05} \\
+  \ganttbar[progress=90]{Integrate protocol into network communication}{2019-02}{2019-05} \\
   
 \ganttgroup{Verification}{2019-02}{2019-05} \\
   \ganttbar[progress=0]{Evaluate Costs of Authentication}{2019-02}{2019-04} \\
@@ -399,7 +415,7 @@ Each node will only be able to communicate on frequencies that are unregulated, 
   \ganttbar[progress=0]{Create Chart of Suggested Cryptosystems}{2019-04}{2019-05} \\
 
 \ganttgroup{Final Write-Up}{2019-03}{2019-05} \\
-  \ganttbar[progress=0]{Write Final Report}{2019-03}{2019-05}
+  \ganttbar[progress=90]{Write Final Report}{2019-03}{2019-05}
 
   \ganttset{link/.style={colorthree}}
 %  \ganttlink[link bulge=0.2, link mid=0.3]{pp}{T1A}

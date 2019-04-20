@@ -99,7 +99,7 @@
 %\HRule \\[0.8cm]
 \textbf{\large Abstract} \\
 \HRule \\[0.4cm]
-The goal of this project will be to implement a secured, decentralized meshnet with low minimum resource requirements to enable the connection of a wide variety of low-end devices which lack a general purpose operating system. Our objective will be to investigate the amount of security offered and resources required by various cryptosystems in order to provide organizations interested in securing their low-end device networks with a quantified estimate of the costs and benefits. In addition, we hope to accomplish graceful degradation on our network, meaning that the elimination or temporary unavailability of a given node will have minimal negative impact on the inter-connectivity of other nodes. This will encourage the securing of many resource limited devices which play a critical role in meeting a wide variety of human needs.
+The goal of this project will be to implement a secured, federated Internet of Things (IoT) network with low minimum resource requirements to enable the connection of a wide variety of low-end devices which lack a general purpose operating system. Our objective will be to investigate the amount of security offered and resources required by various cryptosystems in order to provide organizations interested in securing their low-end device networks with a quantified estimate of the costs and benefits. In addition, we hope to accomplish graceful degradation on our network, meaning that the elimination or temporary unavailability of a given node will have minimal negative impact on the inter-connectivity of other nodes. This will encourage the securing of many resource limited devices which play a critical role in meeting a wide variety of human needs.
 \\[0.4cm]
 \HRule \\[1.5cm]
 \end{minipage}
@@ -126,60 +126,68 @@ The goal of this project will be to implement a secured, decentralized meshnet w
 \tableofcontents
 \newpage
 
+\section{Changes}
+\begin{center}
+    \begin{tabular}{|c|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Section Number} &  \textbf{Original} & \textbf{New} \\ \hline
+        Whole Document & The terms "ad-hoc" and "mesh network" & Changed to the more accurate terms "polymorphic" and "federated network" \\ \hline
+        2 & "...working on top of the session layer" & "...working on top of the application layer" \\ \hline
+        6.3 & Was called "Web Application" & Now called "User Interfaces" \\ \hline
+        6.3 & All instances of "Web Application" & Changed to "Desktop Application" \\ \hline
+        6.4.2 & Was called "Communication Protocols" & Now called "Messaging Structure" \\ \hline
+        8 & Old Ghant Chart referenced Web Application and showed work starting in September. & Updated to more closely resemble actual timeline. \\ \hline
+        9.2 & Did not exist in original document. & Added Industrial Internet of Things acronym. \\ \hline
+        Appendix A & Outdated Brypt Architecture Diagram. & Updated Brypt Architecture Diagram. \\ \hline
+    \end{tabular}
+\end{center}
+
 \section{Scope}
 
-The ultimate goal of this project will be to produce the implementation and verification of the secure networking paradigm succinctly named Brypt. Brypt combines the main cornerstones of the software, bridging and encrypting. The implementation will provide a central server, binaries for node endpoints, and a security protocol working on top of the session layer. In completing the work on this project our team aims to provide a novel solution to security in interconnected networks of embedded and general purpose devices. Some of the benefits Brypt will provide include the increased viability of secure cryptographic primitives in power constrained environments across a number of different communication technologies. 
+The ultimate goal of this project will be to produce the implementation and verification of the secure networking paradigm succinctly named Brypt. Brypt combines the main cornerstones of the software, bridging and encrypting. The implementation will provide a central server, binaries for node endpoints, and a security protocol working on top of the application layer. In completing the work on this project our team aims to provide a novel solution to security in interconnected networks of embedded and general purpose devices. Some of the benefits Brypt will provide include the increased viability of secure cryptographic primitives in resource constrained environments across several of different communication technologies.
 
-As it stands, a wide variety of mission critical tasks for many utility grids (water, power, etc.) are accomplished by low power embedded devices. The mass quantity of devices required to fulfill the operational needs of these networks has created a systemic problem of sacrificing security to reduce the cost of power. The purpose of our system, Brypt, will aim to provide a solution for architects of these networks to have the best of both worlds. In minimizing the cost of power while maximizing the security of ad-hoc mesh networks will demonstrate numerous benefits.
+As it stands, a wide variety of mission critical tasks for many utility grids (water, power, etc.) are accomplished by low power embedded devices. By in large information security appears to be an afterthought in many internet connected devices thus creating significant opportunities for malicious persons to compromise these systems. Given that interconnected devices have become ubiquitous with modern life, the effects of a compromised system can be far reaching. The outcomes can range from the invasion of industrial security to the loss of life. Our project takes a look at the state of Internet of Things (IoT) security as we implement our own network. To solve these issues we will implement a federated infrastructure of which we will use to study the trade-offs of security and power consumption. Our project, Brypt, aims to provide a solution for architects of these networks to have the best of both worlds. In minimizing the cost of power while maximizing the security of IoT networks will demonstrate numerous benefits.
 
-In addition to offering an implementation of what our investigations suggest to be an excellent general purpose meshnet cryptosystem, we will generate useful data about the costs of resource asymmetric cryptosystems that can be applied to the design of more special purpose meshnets by organizations looking to secure their particular resource distribution optimally. These findings will be published in a final report alongside the implemented network to help in the potential design of such future projects.
+In addition to offering an implementation of what our investigations suggest to be an excellent general purpose Internet of Things cryptosystem, we will generate useful data about the costs of resource asymmetric cryptosystems that can be applied to the design of more special purpose IoT networks by organizations looking to secure their particular resource distribution optimally. These findings will be published in a final report alongside the implemented network to help in the potential design of such future projects.
 
 \section{Stakeholders}
 
 \subsection{Internal Stakeholders}
 
-All members of the IoT Security Research team and our client, Kevin McGrath, who is in association with McAfee and Oregon State University, hold an interest in the results of this research.
-
-% Anyone have design concerns??
+All members of the IoT Security Research team and our client, Kevin McGrath, who is in association with McAfee and Oregon State University, hold an interest in the results of this implementation and resulting research.
 
 \subsection{External Stakeholders}
 
-The results of this research project will be of interest/concern to members of the IoT development community, IoT industries (i.e. smart devices and utility grids), and consumers of those products. 
+The results of this research project will be of interest/concern to members of the Internet of Things development community, Industrial Internet of Things (IIoT) industries (i.e. smart devices and utility grids), and consumers of those products. 
 
+%\section{References}
 
-% Just us and Kevin...I think?
-%TODO: \\
-%An SDD shall identify the design stakeholders for the design subject.
-%An SDD shall identify the design concerns of each identified design stakeholder.
-%An SDD shall address each identified design concern. 
-
-\section{References}
-
-\begingroup
-\renewcommand{\section}[2]{}%
-%\renewcommand{\chapter}[2]{}% for other classes
-\bibliographystyle{ieeetr}
-\bibliography{citations}
-\endgroup 
+%\begingroup
+%\renewcommand{\section}[2]{}
+%\bibliographystyle{ieeetr}
+%\bibliography{citations}
+%\endgroup 
 
 \section{Context}
 
-From smart-grids to autonomous cars to needlessly elaborate refrigerators, the use of embedded devices and the size of the IoT is one of the fastest growing areas of computation in our time. With this growth comes the unique challenge of implementing security on highly cost-prohibitive devices. Though much arduous work has already been put into optimizing resource usage of cryptosystems, the highly resource asymmetric nature of many of these IoT network topologies leaves room for more bespoke optimization strategies which take into consideration the resource distribution of the network. In this new context, doubling the \textit{overall} computation used by a cryptosystem may actually be an improvement, so long as the computation required of the weakest devices on the network decreases adequately (since in many circumstances an increase in server power may be 25\% as expensive as a comparable increase in embedded device power on the same network). In order to help organizations enumerate the cost of securing their embedded device networks, we aim to provide real world, experimental data about the electricity and computation usage of a myriad of cryptosystems, some of which will be designed with resource asymmetry in mind. 
+From smart-grids to autonomous cars to needlessly elaborate refrigerators, the use of embedded devices and the size of the IoT is one of the fastest growing areas of computation in our time. With this growth comes the unique challenge of implementing security on highly cost-prohibitive devices. Though much of the arduous work has already been put into optimizing resource usage of cryptosystems, the highly resource asymmetric nature of many of these IoT network topologies leaves room for more bespoke optimization strategies which take into consideration the resource distribution of the network. In this new context, doubling the \textit{overall} computation used by a cryptosystem may actually be an improvement, so long as the computation required of the weakest devices on the network decreases adequately (since in many circumstances an increase in server power may be 25\% as expensive as a comparable increase in embedded device power on the same network). In order to help organizations enumerate the cost of securing their embedded device networks, we aim to provide real world, experimental data about the electricity and computation usage of a myriad of cryptosystems, some of which will be designed with resource asymmetry in mind. 
 
-Brypt will not only provide the secure network created to our stakeholders, but also research done on the network to investigate power consumption and security trade-offs. One service this project provides is information on implementation of this secure mesh network in distinct environments. This implementation will span three communication protocols with varying wireless ranges using a mesh-network designed for a wide range of real world potential uses. However, most stakeholders may want to simply interact with our project. These stakeholders can interact through our three provided interfaces discussed in section \ref{server_api}. These interfaces include a home-page providing information and binaries for these users to implement on their own. In addition, this interface provides the ability for users to register and log in. Lastly, users can interact to the system through the dashboard to manage their cluster-networks as well as to authenticate new nodes onto their cluster network. Some of our stakeholders such as members of the IoT industry may not be as interested in the specific implementation of our network or how to implement it themselves, but are more interested in the outcome of our research. These stakeholders will be able to view our research on our network as to the trade-offs between security, power consumption, and see how feasible it is to implement security on low-power embedded devices.
+Brypt will not only provide the secure network created to our stakeholders, but also research done on the network to investigate power consumption and security trade-offs. One service this project provides is information on implementation of this secure IoT network in distinct environments. This implementation will span three communication protocols with varying wireless ranges using a federated network designed for a wide range of real world potential uses. However, most stakeholders may want to simply interact with our project. These stakeholders can interact through our three provided interfaces discussed in section \ref{server_api}. These interfaces include a home-page providing information about the network and binaries for these users to install on their devices, which supply said information. In addition, this interface provides the ability for users to register and log in. Lastly, users can interact to the system through the dashboard to manage their cluster-networks as well as to authenticate new nodes onto their cluster network.
+
+Some of our stakeholders such as members of the IoT industry may not be as interested in the specific implementation of our network or how to implement it themselves, but are more interested in the outcome of our research. These stakeholders will be able to view our research on our network as to the trade-offs between security, power consumption, and see how feasible it is to implement security on low-power embedded devices.
 
 \section{Implementation}
 
 \subsection{Server API} % Design View
 \label{server_api}
 
-The Central Server of the Brypt Architecture will serve two purposes within the context of our system.
+The Central Server of the Brypt Architecture will serve two purposes within the context of our system:
 
-The first responsibility of the server is that of serving web application pages and the handling of communications with a client computer. A client computer is defined as being any general purpose computer with internet connectivity and a modern browser. These application pages will be served dynamically through three discrete routers deployed under the single Brypt domain. These three interfaces provided by our web application are broken into three logically separated subdomains due to the distinct functionalities provided. The first interface provided by the central server will handle requests with all visitors from our front facing web-page. The front-facing web interface to be serviced by the www.brypt.com subdomain will present basic information about the Brypt system as well as the ability to download Brypt binaries. These binaries will enable any computer with internet access to operate as a cluster node on a Brypt network. The second interface served by the Brypt server will be the web-based application dashboard. This dashboard will handle the management of a user’s network clusters and parse data transmissions from their network. The dashboard interface will be accessible through the dashboard.brypt.com subdomain. Our third interface and that which serves as an intermediary to the two previously discussed interfaces is the access portal. This access interface serviced by access.brypt.com will provide user registration and login functionalities.
+The first responsibility of the server is that of serving website pages and handling communications with a client computer. A client computer is defined as being any general purpose computer with the ability to connect to the internet and a modern browser. Endpoints will be served dynamically through three discrete routes deployed under the single Brypt domain. The three application programming interfaces (APIs) provided by our web application are broken into three logically separated sub-domains due to the distinct functionalities provided. The first interface provided by the central server will handle requests with all visitors from our front facing web-page. The front-facing web interface to be serviced by the www.brypt.com sub-domain will present basic information about the Brypt system as well as the ability to download Brypt binaries. These binaries will enable any computer with internet access to operate as a cluster node on a Brypt network. The second endpoint provided by the Brypt server will be an API for the desktop application. The desktop application endpoint will handle the management of a user’s network clusters and provide information on their registered nodes. The desktop API will be accessible through the bridge.brypt.com sub-domain. Our third interface and that which serves as an intermediary to the two previously discussed interfaces is the access portal. This access interface serviced by access.brypt.com will provide user registration and log-in functionalities.
 
-The second responsibility of our central server will be the authentication and authorization of nodes and joining nodes to the network. The bridge.brypt.com subdomain will provide node administration services. This server endpoint will have an associated user interface accessible through the dashboard application. This interface will request the UUID of the node which in turn tells the server to listen for connections from that device. Upon contact from the node, the server will provide the device a pre-image puzzle based on a unique identifier specific to the node. Once this puzzle has successfully been solved the node will be considered authenticated and provided network connection information.
+The second responsibility of our central server will be the authentication and authorization of nodes and joining nodes to the network. The bridge.brypt.com sub-domain will provide node administration services. This server endpoint will have an associated user interface accessible through the dashboard application. This interface will request the universally unique identifier (UUID) of the node which in turn tells the server to listen for connections from that device. Upon contact from the node, the server will provide the device a pre-image puzzle based on a unique identifier specific to the node. Once this puzzle has successfully been solved the node will be considered authenticated and provided network connection information.
 
-In order to provide the desired functionalities as fast and as efficient as possible the central server will be written using the Go programming language. Go will enable our team the ability to develop each subdomain router individually and as a distinct package while maintaining a method of interconnection between them. The structure of Brypt server will be based on the REST architecture and as such we will be handling all requests using HTTP/S. We will be utilizing the Go-Chi library to act as a lightweight request handler for our server. To ensure the maximum amount of security in client-server communications our server will ensure all HTTP requests are redirected to the appropriate HTTPS url.
+In order to provide the desired functionalities as fast and as efficiently as possible the central server will be written using the Go programming language. Go will enable our team the ability to develop each sub-domain router individually and as a distinct package while maintaining a method of interconnection between them. The structure of Brypt server will be based on the REST architecture and as such we will be handling all requests using HTTP/S. We will be utilizing the Go-Chi library to act as a lightweight request handler for our server. To ensure the maximum amount of security in client-server communications our server will ensure all HTTP requests are redirected to the appropriate HTTPS url.
 
 \subsection{Database Design}
 
@@ -189,13 +197,15 @@ The Brypt system will require a database to maintain persistent data storage for
 
 % Mention any Design Relationships the Server API has with any other design viewpoints or views
 
-\subsection{Web Application}
+\subsection{User Interfaces}
 
-The primary interface of our system will be provided through a cloud based application served through our central server. Within our web application three primary access points will be available to the user. The first interface will be the base information page for Brypt; this page will contain information about the system, it’s requirements, and downloads. The second interface will be the node management screen; these pages will provide node network authorization. The final user interface element of our system is the dashboard page which will contain information pertaining to the status of the user’s connected clusters and aggregation of the nodal data. The only requirement of the user will be access to a browser capable device. Outside of our application interface, users will need to interact with our embedded devices and/or binaries for their system of choice. The frontend of our web application will be serviced through the utilization of HTML, CSS, JavaScript, and Vue.js. Each page to be served will be templated and compiled server side which will then be handled by Vue.js for client side interaction and AJAX communications. 
+The primary interface of our system will be provided through a Electron based desktop application. Electron enables cross-platform desktop applications to be written and deployed using web programming technologies such as HTML, CSS, and JavaScript. Within our desktop application three primary access points will be available to the user. The first interface will be the base information page for Brypt; this page will contain information about the system, it’s requirements, and downloads. The second interface will be the node management screen; these pages will provide node network authorization. The final user interface element of our system is the dashboard page which will contain information pertaining to the status of the user’s connected clusters and aggregation of the nodal data. The only requirement of the user will be access to a browser capable device. Outside of our application interface, users will need to interact with our embedded devices and/or binaries for their system of choice. The frontend of our desktop application will be serviced through the utilization of HTML, CSS, JavaScript, and Vue.js. Each page to be served will be templated and compiled by the desktop application which will then be handled by Vue.js for client side interaction and AJAX communications. 
+
+ Electron by default utilizes a Main and Renderer process given that it is built of Chromium and Node.js. We had to make use these default processes for our desktop application with the addition of a Brypt connection thread forked from the Main process. The Main process handles the state of the application as well as launching browser windows and other native operating system interactions. Each browser window launched by the Main process is handled by a Renderer process to provide the User Interface visuals and interactions. The Brypt connection thread handles communication with the Brypt network via ZeroMQ in a Request/Reply format over TCP. There are two main forms of interprocess communication (IPC) in use to get these three processes talking to each other. The first method of IPC allows the Renderer to request actions to be taken by the Main process which may include launching a new window or sending and collecting information from the Brypt connection process. The Brypt connection is managed by an interface which forks the connection logic and directs actions to the child process.
 
 \subsection{Node Networking}
 
-The network as a whole will be broken down into sub-networks based on the communication protocol used between devices. One root network consisting of a root network coordinator and the multi-communication protocol capable network coordinator nodes. This network will provide aggregated data in packets to be sent to the web-application and central server. These powerful nodes within the root network will act as coordinators of a sub-network for a specific communication protocol type (see Figure \ref{fig:isn}).
+The network as a whole will be broken down into sub-networks based on the communication protocol used between devices. One root network consisting of a root network coordinator and the multi-communication protocol capable network coordinator nodes. This network will provide aggregated data in packets to be sent to the desktop application. These powerful nodes within the root network will act as coordinators of a sub-network for a specific communication protocol type (see Figure \ref{fig:isn}).
 
 
 \begin{figure}[h]
@@ -206,11 +216,11 @@ The network as a whole will be broken down into sub-networks based on the commun
 \end{figure}
 
 
-To begin, we will need to implement a pseudo-mesh network which will be used as the platform for our research on the financial and computational costs of securing a node. The implementation of our base network will be composed of a central routing authority and low power nodes. The central routing authority will operate on a remote server which will perform verification and authorization of the network nodes. The mode of authentication will use an aggregate or sequential encryption puzzle (see section \ref{node_auth}) to verify the potential network node while also providing some level of DDOS protection. The central server interface will request the nodes UUID as input and listen for the individual node to make contact. Upon first contact to node will compute a encryption puzzle based on their production key provided from installation.
+To begin, we will need to implement a federated network which will be used as the platform for our research on the financial and computational costs of securing a node. The implementation of our base network will be composed of a central routing authority and low power nodes. The central authority will operate on a remote server which will perform verification and authorization of the network nodes. The modes of authentication will generally use an aggregate or sequential encryption puzzle (see section \ref{node_auth}) to verify the potential network node while also providing some level of DDOS protection, meaning the network must be implemented to allow shared secrets. The central server interface will request the nodes UUID as input and listen for the individual node to make contact. Upon first contact to node will compute a encryption puzzle based on their production key provided from installation.
 
-After a node has successfully solved the check it will be provided routing information to a coordinator node for its specific communication protocol. If the network has separate clusters and the user has requested to join a specific group, that information will be provided to the new node for routing. Given that the node network will be developed based on a multi-hop mesh network, the new node will perform a series of acknowledgements to be configured into the topology. During this configuration process the node will generate a transmission “line” table to be able to communicate with as many peers it has access too. Utilizing the information of it’s cluster the node will be able to perform it’s base operation and listen for failed peers. If a peer has failed it’s security check, as it has been compromised or has gone offline, the coordinator will be notified and the network will reconfigure.
+After a node has successfully solved the check it will be provided routing information to a coordinator node for its specific communication protocol. If the network has separate clusters and the user has requested to join a specific group, that information will be provided to the new node for routing. Given that the node network will be developed based on a multi-hop federated network, the new node will perform a series of acknowledgements to be configured into the topology. During this configuration process the node will generate a transmission “line” table to be able to communicate with as many peers it has access too. Utilizing the information of it’s cluster the node will be able to perform its base operation and listen for failed peers. If a peer has failed its security check, as it has been compromised or has gone offline, the coordinator will be notified and the network will reconfigure.
 
-The web-application will be integrated into the network either as a node or through the central server and will generate queries for the networked devices. Queries will be routed through a network graph structure to embedded devices. Messages will propagate through the graph from these devices to reach the web-application.
+The desktop-application will be integrated into the network either as a node or through the central server and will generate queries for the networked devices. Queries will be routed through a network graph structure to embedded devices. Messages will propagate through the graph from these devices to reach the desktop-application.
 
 % -Root coordinator in network of coordinators
 % -Node tree structure (topology)
@@ -219,9 +229,13 @@ The web-application will be integrated into the network either as a node or thro
 \subsubsection{Communication Technologies}
 
 % WiFi, LoRa, BLE - how we're going to implement this on all of the network devices
-Devices in the network will be able to communicate on one of three different technologies: Wi-Fi, LoRa, or Bluetooth. The devices used for this network as nodes will be Adafruit Featherboards, while Raspberry Pi computers will act as network coordinators. We chose these devices because they have differing architectures and capabilities, and so will better simulate an actual IoT network: the Featherboards will be chosen from BLE, LoRa, and ARM Cortex Wi-Fi and ESP-8266 Wi-Fi. Coordinator nodes will have receivers and transmitters for all three types so that they can fulfill their duty of translating between the radio types. The root network will contain the coordinator nodes for the sub-networks and will communicate over Wi-Fi.
+Devices in the network will be able to communicate on at least one of three different technologies: Wi-Fi, LoRa, or Bluetooth.
+%The devices used for this network as nodes will be Adafruit Featherboards, while Raspberry Pi computers will act as network coordinators.
+%We chose these devices because they have differing architectures and capabilities, and so will better simulate an actual IoT network: 
+%the Featherboards will be chosen from BLE, LoRa, and ARM Cortex Wi-Fi and ESP-8266 Wi-Fi.
+The network will be configured between coordinator nodes, leaf nodes, and branch nodes (nodes that act as sub-coordinators). Coordinator nodes will have receivers and transmitters for all three types so that they can fulfill their duty of translating between the radio types. The root network will contain the coordinator nodes for the sub-networks and will communicate over Wi-Fi using TCP sockets.
 
-\subsubsection{Communication Protocols}
+\subsubsection{Messaging Structure}
 
 The database will contain a collection of every node in the network, stored with their assigned addresses (assigned by the coordinators). Each coordinator will store a table of every node in its direct cluster, again with their assigned address. This table can include other coordinators that will control smaller groups of nodes that potentially operate with a different radio technology. Additionally, each node will have a similar, smaller table that contains all nodes that are within their communication range that they are able to communicate with. Thus, our network structure can be described by an undirected graph.
 
@@ -229,12 +243,14 @@ When the Client makes a request to the network, the request is first passed to t
 
 \begin{lstlisting}
 {
-    coordinator_id: ##,
-    node_data: [(node_id: 1, node_data: "..."),
-                (node_id: 2, node_data: "..."),
-                ...,
-                (node_id: N, node_data: "...")],
-    packet_signature: "..."
+    source_id: "#;await_id",
+    destination_id: "#;await_id",
+    command: #,
+    phase: #,
+    data: "...",
+    timestamp: "...",
+    nonce: #,
+    auth_token: "..."
 }
 \end{lstlisting}
 \subsubsection{Verification}
@@ -363,7 +379,7 @@ Though decreasing the electricity and computation required to run a cryptosystem
 \section{Summary}
 
 % Summary of our project. What it'll look like in the end.
-By the end of this project a secured, decentralized meshnet with low minimum resource requirements will be built. This network will allow for connection from a wide variety of low-end devices which lack a general purpose operating system. Additionally, we hope to accomplish graceful degradation in our network meaning that the elimination or temporary unavailability of a given node will have minimal negative impact on the inter-communication of the other nodes. Most importantly, this network will provide a platform to investigate the amount of security offered by various cryptosystems versus the power costs. Combinations of cryptosystems in "phases" will be implemented across the network and evaluated by their power consumption and security offerings.
+By the end of this project a secured, federated network with low minimum resource requirements will be built. This network will allow for connection from a wide variety of low-end devices which lack a general purpose operating system. Additionally, we hope to accomplish graceful degradation in our network meaning that the elimination or temporary unavailability of a given node will have minimal negative impact on the inter-communication of the other nodes. Most importantly, this network will provide a platform to investigate the amount of security offered by various cryptosystems versus the power costs. Combinations of cryptosystems in "phases" will be implemented across the network and evaluated by their power consumption and security offerings.
 
 \section{Project Timeline}
 
@@ -388,9 +404,9 @@ By the end of this project a secured, decentralized meshnet with low minimum res
     group height=.3,
     group peaks height=.2,
     bar incomplete/.append style={fill=colorthree}
-   ]{2018-09}{2019-5}
+   ]{2018-11}{2019-5}
    \gantttitlecalendar{year}\\
-   \gantttitlelist{9,10,11,12,1,2,3,4,5}{1} \\
+   \gantttitlelist{11,12,1,2,3,4,5}{1} \\
    %\ganttbar[
 %    progress=100,
  %   bar progress label font=\small\color{colorone},
@@ -401,27 +417,30 @@ By the end of this project a secured, decentralized meshnet with low minimum res
 \ganttset{progress label text={}, link/.style={black, -to}}
 
 % Objective 1
-\ganttgroup{Server API}{2018-10}{2018-11} \\
+\ganttgroup{Server API}{2018-11}{2019-1} \\
 % Task A - Start of Jan to end of Jan (1 month)
-\ganttbar[progress=50, name=T1A]{Develop Server API}{2018-10}{2018-11} \\
+\ganttbar[progress=100, name=T1A]{Develop Server API}{2018-11}{2019-1} \\
 % Task B - Start of Feb to end of Apr (3 months)
 % \ganttlinkedbar[progress=0]{Task B}{2019-02}{2019-04} \\
 % Task C
 % \ganttlinkedbar[progress=0]{Task C}{2019-05}{2019-06} \\
 
 % Objective 2
-\ganttgroup{Web Application UI}{2018-11}{2018-12} \\
+\ganttgroup{Website}{2018-11}{2019-1} \\
 % Task A
-\ganttbar[progress=15, name=T2A]{Develop UI and integrate into server}{2018-11}{2018-12} \\
-\ganttbar[progress=0, name=T2A]{Test UI Usability}{2018-12}{2018-12} \\
+\ganttbar[progress=100, name=T2A]{Develop website and integrate into server}{2018-11}{2019-1} \\
 % Task B
 % \ganttlinkedbar[progress=0]{Task B}{2019-04}{2019-06} \\
 
-\ganttgroup{Node Networking}{2019-01}{2019-02} \\
-  \ganttbar[progress=0]{Develop application to run on nodes}{2019-01}{2019-02} \\
-
+\ganttgroup{Node Networking}{2019-01}{2019-04} \\
+  \ganttbar[progress=90]{Develop application to run on nodes}{2019-01}{2019-04} \\
+  
+\ganttgroup{Desktop Application}{2019-02}{2019-05} \\
+  \ganttbar[progress=90]{Develop Electron application}{2019-02}{2019-04} \\
+  \ganttbar[progress=0, name=T2A]{Test UI Usability}{2019-5}{2019-5} \\
+  
 \ganttgroup{Security Protocol}{2019-02}{2019-05} \\
-  \ganttbar[progress=0]{Integrate protocol into network communication}{2019-02}{2019-05} \\
+  \ganttbar[progress=90]{Integrate protocol into network communication}{2019-02}{2019-05} \\
   
 \ganttgroup{Verification}{2019-02}{2019-05} \\
   \ganttbar[progress=0]{Evaluate Costs of Authentication}{2019-02}{2019-04} \\
@@ -431,7 +450,7 @@ By the end of this project a secured, decentralized meshnet with low minimum res
   \ganttbar[progress=0]{Create Chart of Suggested Cryptosystems}{2019-04}{2019-05} \\
 
 \ganttgroup{Final Write-Up}{2019-03}{2019-05} \\
-  \ganttbar[progress=0]{Write Final Report}{2019-03}{2019-05}
+  \ganttbar[progress=90]{Write Final Report}{2019-03}{2019-05}
 
   \ganttset{link/.style={colorthree}}
 %  \ganttlink[link bulge=0.2, link mid=0.3]{pp}{T1A}
@@ -464,6 +483,7 @@ By the end of this project a secured, decentralized meshnet with low minimum res
     \item FAAS: Fast Authentication with Aggregate Signatures
     \item HMAC: Keyed-Hashing for Message Authentication
     \item IoT: Internet of Things
+    \item IIoT: Industrial Internet of Things
     \item LoRa: Long Range Radio (868 MHz)
     \item MitM: Man in the Middle
     \item PitM: Person in the Middle
@@ -486,11 +506,6 @@ By the end of this project a secured, decentralized meshnet with low minimum res
 \appendix
 
 \section{Brypt Architecture Diagram}
-\vspace*{4cm}
-\begin{turn}{270}
-    \makebox[\linewidth]{
-        \includegraphics[width=1.5\linewidth]{Images/draft-brypt-architecture-medium.png}
-    }
-\end{turn}
+\includegraphics[width=1\linewidth]{Images/working-brypt-arch.png}
 
 \end{document}
